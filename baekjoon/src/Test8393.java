@@ -14,5 +14,7 @@ public class Test8393
         }
         
         System.out.println(sum);
+        
+        sc.close();
     }
 }
