@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Test10818
 {
@@ -9,20 +9,15 @@ public class Test10818
         int n = sc.nextInt();
         int[] arr = new int[n]; 
         
-        int max = 9999;
-        int min = -9999;
-        
         for(int i=0;i<n;i++)
         {
             arr[i] = sc.nextInt();
-            
-            if(arr[i]>max)
-                max = arr[i];
-            
-            if(arr[i]<min)
-                min = arr[i];
         }
         
-        System.out.print(min + " " + max);
+        Arrays.sort(arr);
+        
+        System.out.println(arr[0] + " " + arr[n-1]);
+        
+        sc.close();
     }
 }
