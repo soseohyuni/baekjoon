@@ -20,7 +20,7 @@ public class Test1065
         		b = (i - 100*a)/10;
         		c = i - 100*a - b*10;
         		
-        		if((b-a)==(c-b) || (a-b)==(b-c))
+        		if((b-a)==(c-b))
         			++count;
         	}	
         }
