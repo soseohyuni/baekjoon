@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test1157 
@@ -7,13 +6,35 @@ public class Test1157
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		String str = sc.next();
-		String[] strArr = new String[str.length()];
+		String str = sc.nextLine().toUpperCase();
+		int[] cnt = new int[26]; 
+		int max = 0; 
+		char c = 'a'; 
 		
+		for(int i=0; i<str.length(); i++) 
+		{ 
+			cnt[str.charAt(i) - 65]++; 
+		
+			if(max<cnt[str.charAt(i) - 65]) 
+			{ 
+				max = cnt[str.charAt(i) - 65]; 
+				c = str.charAt(i); 
+			} 
+			else if(max==cnt[str.charAt(i) - 65])
+				c = '?';
+		}
+		
+		System.out.println(c);
+		
+		sc.close();
+
+		/*
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine()
+		String[] strArr = new String[str.length()];
 		int n = 65;
 		int[] cnt = new int[26];
 		int max = 0;
-		int temp = 0;
 		
 		for(int i=0; i<str.length(); i++)
 		{
@@ -35,7 +56,7 @@ public class Test1157
 			if(cnt[max]<cnt[i])
 			{
 				max = i;
-				temp = i;
+				//temp = i;
 			}
 		}
 		
@@ -45,11 +66,6 @@ public class Test1157
 			System.out.println("?");
 		else
 			System.out.println((char)(max+n));
-//		
-//		for(int i : cnt)
-//		{
-//			System.out.println(i);
-//		}
-//		
+		*/
 	}
 }
