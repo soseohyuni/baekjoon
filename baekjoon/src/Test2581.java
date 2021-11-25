@@ -11,16 +11,15 @@ public class Test2581
 		int hap = 0;
 		int min = 0;
 		
-		for(int i=n; i>m; i--)
+		for(int i=n; i>=m; i--)
 		{
-			boolean check = true;
-			
 			if(i==1)
 				continue;
 			
+			boolean check = true;
 			hap += i;
 			
-			for(int j=2; j<=Math.sqrt(n); j++)
+			for(int j=2; j<=Math.sqrt(i); j++)
 			{
 				if(i%j==0)	// 소수가 아닌 경우
 				{
