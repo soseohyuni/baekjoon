@@ -18,6 +18,7 @@ public class Test1018
 		{
 			String str = sc.next();
 			
+			// W ดย true, B ดย false
 			for(int j=0; j<m; j++)
 			{
 				if(str.charAt(j)=='W')
