@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Test1181 
@@ -8,55 +10,33 @@ public class Test1181
 		
 		int n = sc.nextInt();
 		String[] arr = new String[n];
-		String temp = "";
 		
 		for(int i=0; i<n; i++)
 		{
 			arr[i] = sc.next();
 		}
 		
-		for(int i=0; i<n-1; i++)
+		Arrays.sort(arr, new Comparator<String>() 
 		{
-			for(int j=i+1; j<n; j++)
+			public int compare(String s1, String s2) 
 			{
-				// 길이가 짧은 것부터 정렬
-				if(arr[i].length()>arr[j].length())
-				{
-					temp = arr[i];
-					arr[i] = arr[j]; 
-					arr[j] = temp;
-				}
-			}
-		}
-	
-		int k = 0;
+				// 단어 길이가 같을 경우 
+				if (s1.length() == s2.length())
+					return s1.compareTo(s2);
 		
-		for(int i=0; i<n-1; i++)
-		{
-			for(int j=i+1; j<n; j++)
-			{
-				if(arr[i].length()==arr[j].length())
-				{
-					while()
-						
-					// 길이가 같으면 사전 순으로 정렬
-					if(arr[i].charAt(k)>arr[j].charAt(k))
-					{
-						temp = arr[j];
-						arr[j] = arr[i]; 
-						arr[i] = temp;
-					}
-					else if(arr[i].charAt(k+1)==arr[j].charAt(k+1))
-					{
-						
-					}
-				}
+				// 그 외의 경우 
+				else 
+					return s1.length() - s2.length();
 			}
-		}
+		});
 		
-		for(String i : arr)
+		System.out.println(arr[0]);
+		
+		for (int i=1; i<n; i++) 
 		{
-			System.out.println(i);
+			// 중복되지 않는 단어만 출력
+			if (!arr[i].equals(arr[i - 1]))
+				System.out.println(arr[i]);
 		}
 		
 		sc.close();
