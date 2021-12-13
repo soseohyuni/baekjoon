@@ -2,46 +2,48 @@ import java.util.Scanner;
 
 public class Test1932 
 {
-	public static int[] arr;
+	static int[][] arr;		// 삼각형을 입력받을 배열
+	static Integer[][] dp;	// 경로 합을 가질 배열 
+	static int N;
 	
 	public static void main(String[] args)
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		int n = sc.nextInt();
-		int sum = 0;
-		
-		for(int i=1; i<=n; i++)
+		N = sc.nextInt();
+		arr = new int[N][N];
+		dp = new Integer[N][N];
+        
+		// 배열 초기화
+		for (int i=0; i<N; i++) 
 		{
-			sum += i;
-		}
-		
-		arr = new int[sum];
-		
-		for(int i=0; i<sum; i++)
-		{
-			arr[i] = sc.nextInt();
-		}
-		
-		int temp = 2;
-		
-		int tot = 0;
-		
-			if(n==1)
-				System.out.println(arr[0]);
-			else
+			for (int j=0; j<i+1; j++) 
 			{
-				for(int j=2; j<=n; j++)
-				{
-					tot += Math.min(arr[temp+2], arr[temp+3]);
-
-					temp += j;
-				}
-				
-				System.out.println(tot);
+				arr[i][j] = sc.nextInt();
 			}
+		}
+		
+		// 가장 마지막 행의 값들을 DP의 마지막 행에도 똑같이 복사
+		for (int i=0; i<N; i++) 
+		{
+			dp[N - 1][i] = arr[N - 1][i];
+		}
+ 
+		System.out.println(find(0, 0));
 		
 		sc.close();
 	}
 	
+	static int find(int depth, int idx)
+	{
+		// 마지막 행일 경우 현재 위치의 dp값 반환
+		if(depth == N - 1) 
+			return dp[depth][idx];
+ 
+		// 탐색하지 않았던 값일 경우 다음 행의 양쪽 값 비교
+		if (dp[depth][idx] == null)
+			dp[depth][idx] = Math.max(find(depth + 1, idx), find(depth + 1, idx + 1)) + arr[depth][idx];
+
+		return dp[depth][idx];
+	}
 }
