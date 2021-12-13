@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Test1932 
+public class Test1932
 {
 	static int[][] arr;		// 삼각형을 입력받을 배열
 	static Integer[][] dp;	// 경로 합을 가질 배열 
