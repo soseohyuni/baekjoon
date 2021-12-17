@@ -14,7 +14,7 @@ public class Test2108
 		/*
 		 *  sum = ÃÑ ÇÕ°è 
 		 *  max = ÃÖ´ñ°ª
-		 *  min = ÃÖ¼Ú°ª 
+		 *  min = ÃÖ¼Ú°ª
 		 *  median = Áß¾Ó°ª
 		 *  mode = ÃÖºó°ª 
 		 */
@@ -79,6 +79,8 @@ public class Test2108
 				}
 			}
 		}
+		
+		sc.close();
 		
 		System.out.println((int)Math.round((double)sum / n));	// »ê¼úÆò±Õ 
 		System.out.println(median);	// Áß¾Ó°ª 
