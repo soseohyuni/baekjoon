@@ -31,7 +31,7 @@ public class Test2156
 		
 		System.out.println(recur(N));
 		
-		sc.close();;
+		sc.close();
 	}
 	
 	static int recur(int N) 
