@@ -48,13 +48,14 @@ public class Test11054
 			r_dp[N] = 1; // 1로 초기화
  
 			// N 이전의 노드들을 탐색
-			for (int i = N - 1; i >= 0; i--) {
+			for (int i = N-1; i >= 0; i--) 
+			{
 				// 이전의 노드 중 seq[N]의 값보다 작은 걸 발견했을 경우
-				if (seq[i] < seq[N]) {
+				if (seq[i] < seq[N])
 					r_dp[N] = Math.max(r_dp[N], LIS(i) + 1);
-				}
 			}
 		}
+		
 		return r_dp[N];
 	}
  
