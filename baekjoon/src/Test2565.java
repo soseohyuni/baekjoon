@@ -25,7 +25,6 @@ public class Test2565
 		// 첫 번째 원소(A전봇대)를 기준으로 오름차순으로 정
 		Arrays.sort(wire, new Comparator<int[]>() 
 		{
-			@Override
 			public int compare(int[] o1, int[] o2) 
 			{
 				return o1[0] - o2[0];
