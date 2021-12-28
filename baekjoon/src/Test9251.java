@@ -37,7 +37,7 @@ public class Test9251
 			if(str1[x] == str2[y])
 				dp[x][y] = lcs(x-1, y-1) + 1;
 			
-			// 같지 않다면 LCS(dp)[x-1][y]와 LCS(dp)[x,y-1] 중 큰 값으로 초기화
+			// 같지 않다면 lcs(dp)[x-1][y]와 lcs(dp)[x,y-1] 중 큰 값으로 초기화
 			else
 				dp[x][y] = Math.max(lcs(x-1, y), lcs(x, y-1));
 		}
