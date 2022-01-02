@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Test15649 
 {
+	//DFS
+	
 	public static int[] arr;
 	public static boolean[] visit;
 	
