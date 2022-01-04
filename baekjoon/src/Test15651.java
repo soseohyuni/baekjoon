@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Test15651 
 {
 	public static int[] arr;
-	public static boolean[] visit;
 	public static StringBuilder sb = new StringBuilder();
 	public static int n,m;
 	
@@ -15,7 +14,6 @@ public class Test15651
 		m = sc.nextInt();
 		
 		arr = new int[m];
-		visit = new boolean[n];
 		
 		nm(n, m, 0);
 		
