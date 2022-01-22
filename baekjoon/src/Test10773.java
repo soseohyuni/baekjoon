@@ -8,27 +8,36 @@ public class Test10773
 		
 		int K = sc.nextInt();
 		int[] arr = new int[K];
-		int zero = 0;
-		int tot = 0;
-		String str = "";
+		int[] res = new int[K];
+		int last = 1;
+		int tot =0;
 		
 		for(int i=0; i<K; i++)
 		{
 			arr[i] = sc.nextInt();
-			
-			if(arr[i]!=0)
-				str = arr[i] + " ";
-			else	
-				zero++;
-		}
-		
-		String res[] = str.split(" ");
-		
-		for(int i=0; i<res.length-zero; i++)
-		{
-			tot += Integer.parseInt(res[i]);
 		}
 
+		res[0] = arr[0];
+	
+		for(int i=1; i<K; i++)
+		{	
+			if(arr[i] != 0)
+			{
+				res[last] = arr[i];
+				last++;
+			}
+			else if(arr[i] == 0)
+			{
+				res[last-1] = 0;
+				last -= 1;
+			}
+		}
+		
+		for(int i : res)
+		{
+			tot += i;
+		}
+		
 		System.out.println(tot);
 		
 		sc.close();
