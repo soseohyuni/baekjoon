@@ -3,6 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
+// 조합 최적화 문제
 public class Test12865 
 {
 	static Integer[][] dp;
@@ -26,17 +27,19 @@ public class Test12865
 		for (int i=0; i<N; i++) 
 		{
 			st = new StringTokenizer(br.readLine(), " ");
+			
 			W[i] = Integer.parseInt(st.nextToken());
 			V[i] = Integer.parseInt(st.nextToken());
 		}
  
 		System.out.println(knapsack(N - 1, K));
  
+		br.close();
 	}
  
 	static int knapsack(int i, int k) 
 	{
-		// i가 0미만, 즉 범위 밖이 된다면
+		// i가 0 미만, 즉 범위 밖이 된다면
 		if (i < 0)
 			return 0;
 		
