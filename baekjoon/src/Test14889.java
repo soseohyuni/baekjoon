@@ -11,7 +11,7 @@ public class Test14889
 	{
 		Scanner sc = new Scanner(System.in);
 		
-		int n = sc.nextInt();
+		n = sc.nextInt();
 		
 		arr = new int[n][n];
 		visit = new boolean[n];
@@ -25,6 +25,7 @@ public class Test14889
 		}
 		
 		team(0, 0);
+		System.out.println(min);
 		
 		sc.close();
 	}
@@ -75,10 +76,10 @@ public class Test14889
 			}
 		}
 		
-		// 두 팀의 점수 차이
+		// 두 팀의 점수 차이 구하기
 		int val = Math.abs(team_start - team_link);
 		
-		// 0이라면 가장 낮은 최솟값이기 때문에 종료
+		// 0이라면 가장 낮은 최솟값이기 때문에 출력하고 종료
 		if(val == 0)
 		{
 			System.out.println(val);
