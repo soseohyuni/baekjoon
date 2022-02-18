@@ -35,7 +35,7 @@ public class Test4949
 			else if(c == ')')
 			{
 				// 스택이 비어있거나 pop할 원소가 소괄호랑 매칭이 안되는 경우
-				// ★ peek : 최근에 추가된 데이터 조횐
+				// ★ peek : 최근에 추가된 데이터 조회
 				if(stack.empty() || stack.peek() != '(')
 					return "no";
 				else 
