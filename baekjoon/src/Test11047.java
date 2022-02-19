@@ -22,7 +22,6 @@ public class Test11047
 			if(arr[i] <= K) 
 			{
 				min += (K / arr[i]);
-				
 				K = K % arr[i];
 			}
 		}
