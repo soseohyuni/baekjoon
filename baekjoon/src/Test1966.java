@@ -17,7 +17,7 @@ public class Test1966
 			
 			LinkedList<int[]> que = new LinkedList<>();
 			
-			for (int i = 0; i < N; i++) 
+			for (int i=0; i<N; i++) 
 			{
 				que.offer(new int[] { i, sc.nextInt() });
 			}
